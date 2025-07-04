@@ -15,21 +15,12 @@ export default function HomePage() {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    const handleLoad = () => {
-      setTimeout(() => {
-        setIsLoading(false);
-      }, 500);
-    };
+    // Simple timeout to simulate loading, more robust than listening for window.load
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 500); // Adjust time as needed
 
-    if (document.readyState === 'complete') {
-      handleLoad();
-    } else {
-      window.addEventListener('load', handleLoad);
-    }
-    
-    return () => {
-      window.removeEventListener('load', handleLoad);
-    };
+    return () => clearTimeout(timer);
   }, []);
 
   return (
