@@ -1,5 +1,6 @@
 
 import type {Metadata} from 'next';
+import { Suspense } from 'react';
 import './globals.css';
 import { Toaster } from "@/components/ui/toaster";
 import { FirebaseAnalytics } from '@/components/layout/firebase-analytics';
@@ -26,7 +27,9 @@ export default function RootLayout({
       <body className="font-body antialiased">
         {children}
         <Toaster />
-        <FirebaseAnalytics />
+        <Suspense fallback={null}>
+          <FirebaseAnalytics />
+        </Suspense>
       </body>
     </html>
   );
