@@ -54,7 +54,7 @@ export async function POST(request: NextRequest) {
         spreadsheetId,
         range: 'Sheet1!A1', // Appends to the first empty row in Sheet1
         valueInputOption: 'USER_ENTERED',
-        resource: {
+        requestBody: {
           values,
         },
       });
