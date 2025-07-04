@@ -10,6 +10,16 @@ export const metadata: Metadata = {
   description: 'Landing page for Utility Twin project, showcasing smart solutions for sustainable impact.',
 };
 
+const firebaseConfig = {
+    apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
+    authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN,
+    projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID,
+    storageBucket: process.env.NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET,
+    messagingSenderId: process.env.NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID,
+    appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID,
+    measurementId: process.env.NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID,
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -23,6 +33,13 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet" />
         <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet" />
+        <script
+            dangerouslySetInnerHTML={{
+                __html: `
+                    window.__FIREBASE_CONFIG__ = ${JSON.stringify(firebaseConfig)};
+                `,
+            }}
+        />
       </head>
       <body className="font-body antialiased">
         <Suspense>
