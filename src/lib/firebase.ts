@@ -50,4 +50,4 @@ function getFirebaseApp(): FirebaseApp | null {
 //     console.error("Firebase app failed to initialize in firebase.ts");
 // }
 
-export { app };
+export { getFirebaseApp };
