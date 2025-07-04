@@ -1,24 +1,13 @@
 
 import type {Metadata} from 'next';
-import { Suspense } from 'react';
 import './globals.css';
 import { Toaster } from "@/components/ui/toaster";
 import { FirebaseAnalytics } from '@/components/layout/firebase-analytics';
-import { getFirebaseApp } from "@/lib/firebase";
 
 export const metadata: Metadata = {
   title: 'Utility Twin – Smart Solution – Sustainable Impact',
   description: 'Landing page for Utility Twin project, showcasing smart solutions for sustainable impact.',
 };
-
-export default function FirebaseInitWrapper() {
-  useEffect(() => {
-    const app = getFirebaseApp();
-    console.log("Firebase initialized on client:", app?.name);
-  }, []);
-
-  return null;
-}
 
 export default function RootLayout({
   children,
@@ -37,9 +26,7 @@ export default function RootLayout({
       <body className="font-body antialiased">
         {children}
         <Toaster />
-        <Suspense fallback={null}>
-          <FirebaseAnalytics />
-        </Suspense>
+        <FirebaseAnalytics />
       </body>
     </html>
   );
