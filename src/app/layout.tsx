@@ -3,6 +3,7 @@ import type {Metadata} from 'next';
 import { Suspense } from 'react';
 import './globals.css';
 import { Toaster } from "@/components/ui/toaster";
+import { FirebaseAnalytics } from '@/components/layout/firebase-analytics';
 
 export const metadata: Metadata = {
   title: 'Utility Twin – Smart Solution – Sustainable Impact',
@@ -25,6 +26,7 @@ export default function RootLayout({
       </head>
       <body className="font-body antialiased">
         <Suspense>
+          <FirebaseAnalytics />
           {children}
         </Suspense>
         <Toaster />
