@@ -43,11 +43,11 @@ function getFirebaseApp(): FirebaseApp | null {
   }
 }
 
-const app = getFirebaseApp();
-if(app) {
-    console.log("Firebase app initialized successfully in firebase.ts");
-} else {
-    console.error("Firebase app failed to initialize in firebase.ts");
-}
+// const app = getFirebaseApp();
+// if(app) {
+//     console.log("Firebase app initialized successfully in firebase.ts");
+// } else {
+//     console.error("Firebase app failed to initialize in firebase.ts");
+// }
 
 export { app };
