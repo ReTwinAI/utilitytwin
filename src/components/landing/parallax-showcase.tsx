@@ -116,7 +116,7 @@ export function ParallaxShowcase() {
               }}
             >
               {/* This inner div handles the mouse-move parallax effect */}
-              <div ref={(el) => (layerRefs.current[index] = el)} className="transition-transform duration-300 ease-out">
+              <div ref={(el) => { layerRefs.current[index] = el; }} className="transition-transform duration-300 ease-out">
                 <Image
                   src={layer.src}
                   alt={layer.alt}
