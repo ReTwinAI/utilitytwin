@@ -1,4 +1,3 @@
-
 // src/components/layout/firebase-analytics.tsx
 'use client';
 
@@ -28,7 +27,7 @@ export function FirebaseAnalytics() {
     if (!firebaseConfig.apiKey || firebaseConfig.apiKey === PLACEHOLDER_API_KEY || 
         !firebaseConfig.measurementId || firebaseConfig.measurementId === PLACEHOLDER_MEASUREMENT_ID) {
       console.warn(
-        "FirebaseAnalytics: Firebase configuration in src/lib/firebase.ts appears to use placeholder values (YOUR_API_KEY or YOUR_MEASUREMENT_ID) or is missing key details. Please update it with your actual Firebase project configuration. Analytics will not be initialized."
+        "FirebaseAnalytics: Firebase configuration appears to use placeholder values or is missing key details. Analytics will not be initialized."
       );
       return;
     }
@@ -37,7 +36,7 @@ export function FirebaseAnalytics() {
     isSupported().then(supported => {
         if (supported) {
           if (app) {
-            console.log("FirebaseAnalytics: Analytics is supported in this browser environment.");
+            console.log("FirebaseAnalytics: Analytics is supported and Firebase app instance exists.");
             const instance = getAnalytics(app);
             analyticsInstance = instance;
             initialized.current = true;
