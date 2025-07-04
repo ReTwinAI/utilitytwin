@@ -34,35 +34,35 @@ export function FirebaseAnalytics() {
     }
     console.log("FirebaseAnalytics: Config check passed. API Key and Measurement ID seem to be set.");
 
-    if (app) {
-      console.log("FirebaseAnalytics: Firebase app instance is available.");
-      isSupported().then(supported => {
+    isSupported().then(supported => {
         if (supported) {
-          console.log("FirebaseAnalytics: Analytics is supported in this browser environment.");
-          const instance = getAnalytics(app);
-          analyticsInstance = instance;
-          initialized.current = true;
-          console.log("FirebaseAnalytics: Analytics initialized successfully.");
+          if (app) {
+            console.log("FirebaseAnalytics: Analytics is supported in this browser environment.");
+            const instance = getAnalytics(app);
+            analyticsInstance = instance;
+            initialized.current = true;
+            console.log("FirebaseAnalytics: Analytics initialized successfully.");
 
-          // Log initial page view once analytics is initialized
-          const pagePath = pathname + (searchParams.toString() ? `?${searchParams.toString()}` : '');
-          firebaseLogEvent(instance, 'page_view', {
-            page_path: pagePath,
-            page_location: window.location.href,
-            page_title: document.title,
-          });
-          console.log(`FirebaseAnalytics: Initial page_view logged for: ${pagePath}`);
+            // Log initial page view once analytics is initialized
+            const pagePath = pathname + (searchParams.toString() ? `?${searchParams.toString()}` : '');
+            firebaseLogEvent(instance, 'page_view', {
+              page_path: pagePath,
+              page_location: window.location.href,
+              page_title: document.title,
+            });
+            console.log(`FirebaseAnalytics: Initial page_view logged for: ${pagePath}`);
+          } else {
+             console.warn("FirebaseAnalytics: Firebase app instance (app) is NOT available. Analytics cannot be initialized. Check src/lib/firebase.ts.");
+          }
         } else {
           console.log("FirebaseAnalytics: Analytics is NOT supported in this browser environment.");
         }
       }).catch(error => {
         console.error("FirebaseAnalytics: Error checking analytics support or initializing analytics:", error);
       });
-    } else {
-      console.warn("FirebaseAnalytics: Firebase app instance (app) is NOT available. Analytics cannot be initialized. Check src/lib/firebase.ts.");
-    }
+    
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [app]); // Rerun if app instance changes (though it shouldn't often once initialized)
+  }, []); 
 
   useEffect(() => {
     if (analyticsInstance && initialized.current) {
