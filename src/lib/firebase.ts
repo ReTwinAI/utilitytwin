@@ -1,39 +1,33 @@
 // src/lib/firebase.ts
 import { initializeApp, getApp, getApps, type FirebaseApp } from 'firebase/app';
 
-// IMPORTANT: Replace with your actual Firebase project configuration.
-// You can find this in your Firebase project settings (Project settings > General > Your apps > Firebase SDK snippet > Config).
-// It is highly recommended to use environment variables for these values:
-// e.g., apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY
-// Create a .env.local file in your project root for these variables.
+// This configuration now reads from your .env.local file.
+// Make sure that file is created and has the correct NEXT_PUBLIC_ variables.
 export const firebaseConfig = {
-  apiKey: "AIzaSyAj0tzW7juUXHOfiB0OFgWehC6lygE2OkE",
-  authDomain: "utlanding-9ba15.firebaseapp.com",
-  projectId: "utlanding-9ba15",
-  storageBucket: "utlanding-9ba15.firebasestorage.app",
-  messagingSenderId: "947938181275",
-  appId: "1:947938181275:web:74934472122026d37cc63e",
-  measurementId: "G-6FZY0KQSZ7"
+  apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
+  authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN,
+  projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID,
+  storageBucket: process.env.NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID,
+  measurementId: process.env.NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID
 };
 
 let app: FirebaseApp;
 
 try {
-  if (!firebaseConfig.apiKey || firebaseConfig.apiKey === "YOUR_API_KEY") {
+  // Check if the configuration is provided before initializing
+  if (!firebaseConfig.apiKey) {
     console.warn(
-      "Firebase is not configured. Please update firebaseConfig in src/lib/firebase.ts with your project details."
+      "Firebase is not configured. Please ensure your .env.local file is set up with all the NEXT_PUBLIC_FIREBASE_ variables."
     );
-    // Assign a dummy app or handle this state if config is missing,
-    // to prevent errors if other Firebase services are used later.
-    // For now, other parts of the app might try to use `app` which would be undefined.
   } else if (getApps().length === 0) {
     app = initializeApp(firebaseConfig);
   } else {
     app = getApp();
   }
 } catch (e) {
-  console.error("Firebase initialization error in src/lib/firebase.ts. Ensure your firebaseConfig is correct and complete.", e);
-  // Handle the error appropriately in a real app
+  console.error("Firebase initialization error in src/lib/firebase.ts. Ensure your firebaseConfig and environment variables are correct.", e);
 }
 
 // @ts-ignore app might be uninitialized if config is missing
