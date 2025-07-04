@@ -64,7 +64,9 @@ export function Navbar() {
             window.scrollTo({ top: 0, behavior: 'smooth' });
           }}
         >
-          <Image src="/images/logo.png" alt="Utility Twin Logo" width={50} height={20} priority unoptimized className="[mask-image:linear-gradient(to_right,transparent,black_20%,black_80%,transparent)]" />
+          <div className="relative w-[120px] h-[30px]">
+            <Image src="/images/logo.png" alt="Utility Twin Logo" fill priority unoptimized className="object-contain [mask-image:linear-gradient(to_right,transparent,black_20%,black_80%,transparent)]" />
+          </div>
         </Link>
 
         <nav className="hidden md:flex space-x-2">
@@ -113,7 +115,9 @@ export function Navbar() {
                       window.scrollTo({ top: 0, behavior: 'smooth' });
                     }}
                   >
-                    <Image src="/images/logo.png" alt="Utility Twin Logo" width={120} height={30} unoptimized className="[mask-image:linear-gradient(to_right,transparent,black_20%,black_80%,transparent)]" />
+                    <div className="relative w-[120px] h-[30px]">
+                      <Image src="/images/logo.png" alt="Utility Twin Logo" fill unoptimized className="object-contain [mask-image:linear-gradient(to_right,transparent,black_20%,black_80%,transparent)]" />
+                    </div>
                   </Link>
                 </SheetClose>
                 {navLinks.map((link) => (

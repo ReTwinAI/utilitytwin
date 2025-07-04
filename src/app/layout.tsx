@@ -6,8 +6,11 @@ import { Toaster } from "@/components/ui/toaster";
 import { FirebaseAnalytics } from '@/components/layout/firebase-analytics';
 
 export const metadata: Metadata = {
-  title: 'Utility Twin – Smart Solution – Sustainable Impact',
-  description: 'Landing page for Utility Twin project, showcasing smart solutions for sustainable impact.',
+  title: 'Utility Twin',
+  description: 'Leveraging digital twin technology and AI to drive resource efficiency for a greener future',
+  icons: {
+    icon: '/logo.ico',
+  },
 };
 
 const firebaseConfig = {
@@ -28,7 +31,6 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <link rel="icon" href="/logo.ico" sizes="any" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet" />

@@ -123,6 +123,7 @@ export function ParallaxShowcase() {
                   width={layer.width}
                   height={layer.height}
                   className="object-contain"
+                  style={{ width: '100%', height: 'auto' }}
                   data-ai-hint={layer.hint}
                   priority={layer.id === 1}
                 />
