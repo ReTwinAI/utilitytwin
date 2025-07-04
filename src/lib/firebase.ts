@@ -13,22 +13,27 @@ export const firebaseConfig = {
   measurementId: process.env.NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID
 };
 
-let app: FirebaseApp;
-
-try {
-  // Check if the configuration is provided before initializing
-  if (!firebaseConfig.apiKey) {
+function getFirebaseApp(): FirebaseApp | null {
+  // Check if the essential configuration is provided before initializing
+  if (!firebaseConfig.apiKey || !firebaseConfig.projectId) {
     console.warn(
       "Firebase is not configured. Please ensure your .env.local file is set up with all the NEXT_PUBLIC_FIREBASE_ variables."
     );
-  } else if (getApps().length === 0) {
-    app = initializeApp(firebaseConfig);
-  } else {
-    app = getApp();
+    return null;
   }
-} catch (e) {
-  console.error("Firebase initialization error in src/lib/firebase.ts. Ensure your firebaseConfig and environment variables are correct.", e);
+  
+  try {
+    if (getApps().length === 0) {
+      return initializeApp(firebaseConfig);
+    } else {
+      return getApp();
+    }
+  } catch (e) {
+    console.error("Firebase initialization error in src/lib/firebase.ts. Ensure your firebaseConfig and environment variables are correct.", e);
+    return null;
+  }
 }
 
-// @ts-ignore app might be uninitialized if config is missing
+const app = getFirebaseApp();
+
 export { app };
