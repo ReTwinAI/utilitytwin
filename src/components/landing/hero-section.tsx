@@ -4,17 +4,38 @@
 import { Button } from "@/components/ui/button";
 import { logAnalyticsEvent } from '@/components/layout/firebase-analytics';
 import { ParallaxShowcase } from './parallax-showcase';
+import { ChevronDown } from "lucide-react";
 
 export function HeroSection() {
   const slogan = "Smart Solution – Sustainable Impact";
 
+  const handleScrollDown = () => {
+    logAnalyticsEvent('select_content', {
+      content_type: 'scroll_prompt_click',
+      item_id: 'scroll_down_arrow',
+    });
+    const targetElement = document.getElementById('parallax-showcase');
+    if (targetElement) {
+      // Get the top position of the parallax container
+      const targetPosition = targetElement.offsetTop;
+      
+      // Calculate 33% of the viewport height to scroll into the animation
+      const scrollOffset = window.innerHeight * 0.33;
+
+      window.scrollTo({
+        top: targetPosition + scrollOffset,
+        behavior: 'smooth'
+      });
+    }
+  };
+
   return (
     <section 
       id="hero" 
-      className="bg-gradient-to-b from-background to-secondary/30 dark:from-background dark:to-secondary/20"
+      className="relative bg-gradient-to-b from-background to-secondary/30 dark:from-background dark:to-secondary/20"
     >
-      {/* Scene 1: Centered slogan. Takes full screen height and centers content. */}
-      <div className="relative flex h-screen min-h-[700px] w-full items-center justify-center">
+      {/* Scene 1: Centered slogan. */}
+      <div className="relative flex min-h-[calc(100vh-5rem)] w-full items-center justify-center pt-24 pb-12 md:pt-0 md:pb-0">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <div className="max-w-4xl mx-auto">
                 <h1 className="font-headline text-4xl md:text-6xl font-bold mb-8 flex min-h-[80px] items-center justify-center md:min-h-[70px]">
@@ -58,10 +79,21 @@ export function HeroSection() {
                 </div>
             </div>
         </div>
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2">
+          <button
+            onClick={handleScrollDown}
+            className="flex h-10 w-10 animate-bounce items-center justify-center rounded-full bg-primary/10 text-primary transition-colors hover:bg-primary/20"
+            aria-label="Scroll to next section"
+          >
+            <ChevronDown className="h-6 w-6" />
+          </button>
+        </div>
       </div>
       
-      {/* Scene 2: Parallax Showcase, which starts below the initial view */}
-      <ParallaxShowcase />
+      {/* Scene 2: Parallax Showcase, which starts immediately after the section above */}
+      <div id="parallax-showcase">
+        <ParallaxShowcase />
+      </div>
       
     </section>
   );

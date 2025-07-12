@@ -40,25 +40,28 @@ export function ParallaxShowcase() {
       if (!containerRef.current) return;
       const rect = containerRef.current.getBoundingClientRect();
       const viewHeight = window.innerHeight;
+      
+      // Animation starts when the top of the container reaches the middle of the screen
+      const animationStartPoint = viewHeight / 2;
 
-      // The total distance we can scroll while the sticky element is pinned.
-      // It's the container's height (200vh) minus the viewport height (100vh).
-      const scrollableDistance = containerRef.current.offsetHeight - viewHeight;
-
-      // If the container's top is still on screen (i.e. > 0), we haven't started.
-      if (rect.top > 0) {
+      // If the container's top is still below the halfway point, we haven't started.
+      if (rect.top > animationStartPoint) {
         setScrollProgress(0);
         return;
       }
 
-      // If the container's top is scrolled past the total scrollable distance, we're done.
-      if (rect.top < -scrollableDistance) {
-        setScrollProgress(1);
-        return;
+      // The total distance we want the animation to run over.
+      // This is now from the halfway point until the element fully passes.
+      const scrollableDistance = containerRef.current.offsetHeight - animationStartPoint;
+
+      // If the container's bottom is above the viewport, we're done.
+      if (rect.bottom < animationStartPoint) {
+          setScrollProgress(1);
+          return;
       }
       
-      // Calculate progress from 0 to 1 as we scroll through the pinned section.
-      const progress = (-rect.top) / scrollableDistance;
+      // Calculate progress from 0 to 1 as we scroll through the animation section.
+      const progress = (animationStartPoint - rect.top) / scrollableDistance;
       setScrollProgress(progress);
     };
 
@@ -90,7 +93,7 @@ export function ParallaxShowcase() {
 
   return (
     // This container defines the scrollable area for the animation
-    <div ref={containerRef} className="relative w-full h-[200vh]">
+    <div ref={containerRef} className="relative w-full h-[150vh]">
       {/* This container sticks to the viewport while scrolling through the parent */}
       <div className="sticky top-0 h-screen w-full overflow-hidden">
         {scrollLayers.map((layer, index) => {
@@ -123,7 +126,7 @@ export function ParallaxShowcase() {
                   width={layer.width}
                   height={layer.height}
                   className="object-contain"
-                  style={{ width: '100%', height: 'auto' }}
+                  style={{ width: 'auto', height: 'auto' }}
                   data-ai-hint={layer.hint}
                   priority={layer.id === 1}
                 />

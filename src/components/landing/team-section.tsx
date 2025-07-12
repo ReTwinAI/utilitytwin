@@ -25,7 +25,7 @@ const teamMembers: TeamMember[] = [
   },
   {
     name: "Malte Hitpaß",
-    role: "Medicine Student",
+    role: "Medical Student",
     bio: "Hey! I am Malte Hitpaß, a 5th-semester medical student from NRW, Germany. I am deeply interested in how technology can shape a more sustainable future. I am keen to explore and contribute to innovative solutions that address pressing environmental challenges, bringing a fresh perspective to the team.",
     imageSrc: "/images/malte.jpeg",
     aiHint: "person portrait"
