@@ -17,7 +17,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
-import { Send } from "lucide-react";
+import { Mail, Send } from "lucide-react";
 import { logAnalyticsEvent } from '@/components/layout/firebase-analytics';
 import { useScrollAnimation } from '@/hooks/use-scroll-animation';
 import { cn } from '@/lib/utils';
@@ -107,6 +107,12 @@ export function ContactUsSection() {
           <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
             Have questions or want to discuss a project? Send us a message!
           </p>
+          <div className="mt-4 text-muted-foreground flex items-center justify-center gap-2">
+            <Mail className="h-5 w-5" />
+            <a href="mailto:team@utilitytwin.tech" className="text-lg hover:text-primary transition-colors">
+              team@utilitytwin.tech
+            </a>
+          </div>
         </div>
         <div className={cn(
           "max-w-2xl mx-auto transform transition-all duration-700 ease-in-out",
