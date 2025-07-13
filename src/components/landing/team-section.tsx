@@ -18,28 +18,28 @@ interface TeamMember {
 const teamMembers: TeamMember[] = [
   {
     name: "Adithya Ramachandran",
-    role: "PhD Researcher",
+    role: "Head of R&D",
     bio: "Hello! I'm Adithya Ramachandran, a Computer Science Doctoral Candidate at FAU Erlangen specializing in AI-driven solutions for water and heat supply systems. With a background in Computational (M.Sc.) and Mechanical (B.Eng.) Engineering, I'm passionate about translating complex AI research into tangible, real-world applications that enhance sustainability and efficiency in the utility sector.",
     imageSrc: "/images/adithya.jpeg",
     aiHint: "person portrait"
   },
   {
     name: "Malte Hitpaß",
-    role: "Medical Student",
+    role: "Head of Marketing",
     bio: "Hey! I am Malte Hitpaß, a 5th-semester medical student from NRW, Germany. I am deeply interested in how technology can shape a more sustainable future. I am keen to explore and contribute to innovative solutions that address pressing environmental challenges, bringing a fresh perspective to the team.",
     imageSrc: "/images/malte.jpeg",
     aiHint: "person portrait"
   },
   {
     name: "Rifaath Ameen",
-    role: "Master's Student - Artificial Intelligence",
+    role: "Head of Technology",
     bio: "Hey! I'm Rifaath Ameen, currently diving deeper into Artificial Intelligence with my Master's studies at FAU, after completing my Bachelor's in AI & Machine Learning. I thrive on learning and tackling new challenges, with a passion for figuring out how AI can create impactful solutions.",
     imageSrc: "/images/rifaath.png",
     aiHint: "person portrait"
   },
   {
     name: "Karla Hausel",
-    role: "Master's Student - International Information Systems",
+    role: "Head of Business Development",
     bio: "Hey there! My name is Karla Hausel and I’m passionate about leveraging technology to drive sustainability and market growth. My main interests are digital transformation, innovation and aligning IT strategies with business goals. I have a Double Bachelor's Degree in International Management and have gained work experience during 2 years in the SaaS - Start-up environment in Paris.",
     imageSrc: "/images/karla.jpg",
     aiHint: "person portrait"
