@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { logAnalyticsEvent } from '@/components/layout/firebase-analytics';
 import { ParallaxShowcase } from './parallax-showcase';
 import { ChevronDown } from "lucide-react";
+import { PrototypeSection } from "./prototype-section";
 
 export function HeroSection() {
   const slogan = "Smart Solution – Sustainable Impact";
@@ -94,6 +95,9 @@ export function HeroSection() {
       <div id="parallax-showcase">
         <ParallaxShowcase />
       </div>
+
+      {/* Scene 3: Prototype Video Section */}
+      <PrototypeSection />
       
     </section>
   );
