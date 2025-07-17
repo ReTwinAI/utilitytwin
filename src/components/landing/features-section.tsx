@@ -143,12 +143,12 @@ function ResponsiveFeaturesLayout() {
             <h2 className="font-headline text-4xl md:text-5xl font-semibold mb-4">
                 How We Transform Utilities
             </h2>
-            <p className="text-lg md:text-xl text-muted-foreground max-w-2xl">
+            <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto md:mx-0">
                 From value-driven outcomes to cutting-edge solutions, Utility Twin is engineered to deliver comprehensive improvements across your entire network.
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 items-center flex-grow pb-16">
-            <div className="relative flex flex-col items-start h-auto md:h-80 order-1 md:order-1">
+          <div className="flex-grow grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 items-center pb-16">
+            <div className="relative flex flex-col items-start h-auto min-h-[16rem] md:h-80 order-1 md:order-1">
                 <div className="relative w-full">
                     {features.map((feature, index) => (
                         <div
@@ -180,7 +180,7 @@ function ResponsiveFeaturesLayout() {
                 </div>
             </div>
 
-            <div className="relative w-full h-full min-h-[320px] md:min-h-[400px] flex items-center justify-center pt-16 md:pt-24 order-2 md:order-2">
+            <div className="relative w-full h-full min-h-[320px] md:min-h-[400px] flex items-center justify-center order-2 md:order-2">
                 <div 
                     className="absolute transition-transform duration-500 ease-in-out"
                     style={{
