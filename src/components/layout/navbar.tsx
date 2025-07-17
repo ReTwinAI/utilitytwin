@@ -50,7 +50,7 @@ export function Navbar() {
         isScrolled ? 'bg-background/95 shadow-md backdrop-blur-sm py-2' : 'bg-transparent py-3'
       )}
     >
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
+      <div className="container mx-auto px-10 sm:px-6 lg:px-8 flex items-center justify-between">
         <Link 
           href="/" 
           className="flex items-center gap-2" 
@@ -64,7 +64,7 @@ export function Navbar() {
             window.scrollTo({ top: 0, behavior: 'smooth' });
           }}
         >
-          <div className="relative w-[120px] h-[30px]">
+          <div className="relative w-[120px] h-[70px]">
             <Image src="/images/logo.png" alt="Utility Twin Logo" fill priority unoptimized className="object-contain [mask-image:linear-gradient(to_right,transparent,black_20%,black_80%,transparent)]" />
           </div>
         </Link>
