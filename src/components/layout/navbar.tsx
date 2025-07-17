@@ -12,6 +12,7 @@ import Image from 'next/image';
 
 const navLinks = [
   { href: '#features', label: 'Features' },
+  { href: '#prototype', label: 'Prototype' },
   { href: '#testimonials', label: 'Testimonials' },
   { href: '#team', label: 'Team' },
   { href: '#contact', label: 'Contact' },
@@ -50,7 +51,7 @@ export function Navbar() {
         isScrolled ? 'bg-background/95 shadow-md backdrop-blur-sm py-2' : 'bg-transparent py-3'
       )}
     >
-      <div className="container mx-auto px-10 sm:px-6 lg:px-8 flex items-center justify-between">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
         <Link 
           href="/" 
           className="flex items-center gap-2" 

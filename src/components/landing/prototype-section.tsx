@@ -9,7 +9,7 @@ import { cn } from '@/lib/utils';
 import { logAnalyticsEvent } from '@/components/layout/firebase-analytics';
 
 // Replace with your actual YouTube video ID
-const YOUTUBE_VIDEO_ID = 'dQw4w9WgXcQ'; 
+const YOUTUBE_VIDEO_ID = 'NfPTbaMHcKQ'; 
 
 export function PrototypeSection() {
   const [isPlaying, setIsPlaying] = useState(false);
@@ -51,7 +51,7 @@ export function PrototypeSection() {
               aria-label="Play prototype video"
             >
               <div className="flex flex-col items-center gap-6 text-center">
-                <div className="relative w-[200px] h-[50px]">
+                <div className="relative w-[200px] h-[100px]">
                   <Image 
                     src="/images/logo.png" 
                     alt="Utility Twin Logo" 
