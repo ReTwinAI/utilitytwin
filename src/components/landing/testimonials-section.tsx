@@ -20,7 +20,7 @@ const testimonials: Testimonial[] = [
   {
     quote: " see a clear need for digitalization in our sector. The concept of Utility Twin can have a major impact on our daily work.",
     name: "Head of Digitalization",
-    title: "German Utility Company.",
+    title: "German Utility Company",
     avatarFallback: "JD",
     avatarSrc: "https://thumbs.dreamstime.com/b/person-gray-photo-placeholder-man-shirt-white-background-person-gray-photo-placeholder-man-136701243.jpg",
     aiHint: "woman portrait"
