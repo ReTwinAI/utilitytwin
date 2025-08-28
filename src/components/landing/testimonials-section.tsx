@@ -35,7 +35,7 @@ const testimonials: Testimonial[] = [
   },
   {
     quote: "Utility companies are facing a huge knowledge management problem. This is were Utility Twin can step right in and centralize this knowledge.",
-    name: "Innovation expert",
+    name: "Innovation Expert",
     title: "",
     avatarFallback: "AB",
     avatarSrc: "https://placehold.co/100x100.png",
