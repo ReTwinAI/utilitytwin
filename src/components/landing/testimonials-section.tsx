@@ -22,7 +22,7 @@ const testimonials: Testimonial[] = [
     name: "Head of Digitalization",
     title: "German Utility Company.",
     avatarFallback: "JD",
-    avatarSrc: "https://placehold.co/100x100.png",
+    avatarSrc: "https://thumbs.dreamstime.com/b/person-gray-photo-placeholder-man-shirt-white-background-person-gray-photo-placeholder-man-136701243.jpg",
     aiHint: "woman portrait"
   },
   {
@@ -30,7 +30,7 @@ const testimonials: Testimonial[] = [
     name: "IT Expert",
     title: "Utility Industry",
     avatarFallback: "JS",
-    avatarSrc: "https://placehold.co/100x100.png",
+    avatarSrc: "https://thumbs.dreamstime.com/b/person-gray-photo-placeholder-man-shirt-white-background-person-gray-photo-placeholder-man-136701243.jpg",
     aiHint: "man portrait"
   },
   {
@@ -38,7 +38,7 @@ const testimonials: Testimonial[] = [
     name: "Innovation Expert",
     title: "",
     avatarFallback: "AB",
-    avatarSrc: "https://placehold.co/100x100.png",
+    avatarSrc: "https://thumbs.dreamstime.com/b/person-gray-photo-placeholder-man-shirt-white-background-person-gray-photo-placeholder-man-136701243.jpg",
     aiHint: "woman tech"
   },
 ];
