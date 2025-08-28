@@ -18,25 +18,25 @@ interface Testimonial {
 
 const testimonials: Testimonial[] = [
   {
-    quote: "Utility Twin revolutionized how we manage our resources. The time savings are incredible!",
-    name: "Jane Doe",
-    title: "Operations Manager, Energetic Solutions",
+    quote: " see a clear need for digitalization in our sector. The concept of Utility Twin can have a major impact on our daily work.",
+    name: "Head of Digitalization",
+    title: "German Utility Company.",
     avatarFallback: "JD",
     avatarSrc: "https://placehold.co/100x100.png",
     aiHint: "woman portrait"
   },
   {
-    quote: "Collaboration has never been smoother. The insights from their AI analysis are game-changing.",
-    name: "John Smith",
-    title: "Lead Engineer, AquaPure Systems",
+    quote: "Germany's public sector is facing a huge workforce gap which will likely to a certain extend be filled with AI. Utility Twin fits right into this trend and can provide the demanded AI know-how needed in this sector.",
+    name: "IT Expert",
+    title: "Utility Industry",
     avatarFallback: "JS",
     avatarSrc: "https://placehold.co/100x100.png",
     aiHint: "man portrait"
   },
   {
-    quote: "Optimizing our network with Utility Twin has led to significant cost reductions and improved efficiency.",
-    name: "Alice Brown",
-    title: "CTO, GridFlow Technologies",
+    quote: "Utility companies are facing a huge knowledge management problem. This is were Utility Twin can step right in and centralize this knowledge.",
+    name: "Innovation expert",
+    title: "",
     avatarFallback: "AB",
     avatarSrc: "https://placehold.co/100x100.png",
     aiHint: "woman tech"
@@ -59,10 +59,10 @@ export function TestimonialsSection() {
           isSectionVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
         )}>
           <h2 className="font-headline text-4xl md:text-5xl font-semibold mb-4">
-            Trusted by Innovators
+            Insights from Industry Leaders
           </h2>
           <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
-            Hear what our partners and clients are saying about Utility Twin.
+            Validating our approach through trusted leaders in the industry.
           </p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
