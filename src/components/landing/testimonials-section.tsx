@@ -18,7 +18,7 @@ interface Testimonial {
 
 const testimonials: Testimonial[] = [
   {
-    quote: " see a clear need for digitalization in our sector. The concept of Utility Twin can have a major impact on our daily work.",
+    quote: "I see a clear need for digitalization in our sector. The concept of Utility Twin can have a major impact on our daily work.",
     name: "Head of Digitalization",
     title: "German Utility Company",
     avatarFallback: "JD",
